@@ -29,8 +29,8 @@ CREATE TABLE posts (
    description VARCHAR(400) NOT NULL,
    upvote INTEGER DEFAULT 0,
    upvote_count INTEGER DEFAULT 0,
-   post_image VARCHAR(2084) DEFAULT 'default_subject.jpg' NOT NULL,
-   author_image VARCHAR(2084) DEFAULT 'default.png' NOT NULL,
+   post_image VARCHAR(2084) DEFAULT 'Image.svg' NOT NULL,
+   author_image VARCHAR(2084) DEFAULT 'Avatar.svg' NOT NULL,
    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    topic_id INTEGER NOT NULL REFERENCES topics(id)
