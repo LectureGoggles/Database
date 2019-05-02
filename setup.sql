@@ -50,7 +50,7 @@ CREATE TABLE reports (
    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    reported_post_id INTEGER NOT NULL,
-   reported_context_extension VARCHAR(200) NOT NULL,
+   reported_content_extension VARCHAR(200) NOT NULL,
    resolved boolean DEFAULT FALSE,
    resolved_by VARCHAR(100) DEFAULT 'unresolved' NOT NULL,
    teacher_created boolean DEFAULT FALSE
