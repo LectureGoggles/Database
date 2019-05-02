@@ -3,8 +3,8 @@ CREATE TABLE subjects (
    author_id INTEGER NOT NULL,
    subject VARCHAR(50) NOT NULL,
    description VARCHAR(250) NOT NULL, 
-   created_at timestamp NOT NULL,
-   updated_at timestamp NOT NULL,
+   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    subject_image VARCHAR(2084) DEFAULT 'default_subject.png' NOT NULL 
 );
 
@@ -31,8 +31,8 @@ CREATE TABLE posts (
    upvote_count INTEGER DEFAULT 0,
    post_image VARCHAR(2084) DEFAULT 'default_subject.jpg' NOT NULL,
    author_image VARCHAR(2084) DEFAULT 'default.png' NOT NULL,
-   created_at timestamp NOT NULL,
-   updated_at timestamp NOT NULL,
+   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    topic_id INTEGER NOT NULL REFERENCES topics(id)
 );
 
@@ -47,8 +47,8 @@ CREATE TABLE reports (
    id SERIAL PRIMARY KEY,
    author_id INTEGER,
    description VARCHAR(250) NOT NULL,
-   created_at timestamp NOT NULL,
-   updated_at timestamp NOT NULL,
+   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    reported_post_id INTEGER NOT NULL,
    reported_context_extension VARCHAR(200) NOT NULL,
    resolved boolean DEFAULT FALSE,
@@ -65,8 +65,8 @@ CREATE TABLE users (
    password bytea NOT NULL,
    school varchar(80) NOT NULL,
    profile_image varchar(2084) DEFAULT 'default.png' NOT NULL,
-   created_at timestamp NOT NULL,
-   updated_at timestamp NOT NULL,
+   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    is_active boolean DEFAULT TRUE,
    is_teacher boolean DEFAULT FALSE,
    is_staff boolean DEFAULT FALSE
