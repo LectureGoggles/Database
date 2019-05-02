@@ -1,7 +1,3 @@
-CREATE DATABASE lecturegoggles;
-
-CONNECT TO lecturegoggles;
-
 CREATE TABLE subjects (
    id SERIAL PRIMARY KEY,
    author_id INTEGER NOT NULL,
