@@ -49,8 +49,8 @@ CREATE TABLE reports (
    description VARCHAR(250) NOT NULL,
    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
    updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   reported_post_id INTEGER NOT NULL,
-   reported_content_extension VARCHAR(200) NOT NULL,
+   reported_post_id INTEGER,
+   reported_content_extension VARCHAR(200),
    resolved boolean DEFAULT FALSE,
    resolved_by VARCHAR(100) DEFAULT 'unresolved' NOT NULL,
    teacher_created boolean DEFAULT FALSE
@@ -73,13 +73,13 @@ CREATE TABLE users (
 );
 
 CREATE TABLE subject_subscription (
-   id INTEGER PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
    user_id INTEGER NOT NULL REFERENCES users(id),
    subject_id INTEGER NOT NULL 
 );
 
 CREATE TABLE topic_subscription (
-   id INTEGER PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
    user_id INTEGER NOT NULL REFERENCES users(id),
    topic_id INTEGER NOT NULL
 );
