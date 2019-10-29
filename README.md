@@ -1,2 +1,2 @@
-# Database
-SQL files to set up PostgreSQL database
+# Lecture Goggles Database
+Transact-SQL files to set up Azure SQL database
